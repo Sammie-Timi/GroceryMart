@@ -16,7 +16,7 @@ class Category {
 
 List<Category> category = [
   Category(
-    title: 'Fruits and Vegetables',
+    title: 'Fruits',
     image: 'assets/images/veg&fruit.png',
     bgcolor: Colors.green.shade50,
     color: Colors.green.shade300,
@@ -34,7 +34,7 @@ List<Category> category = [
     color: Colors.yellow.shade300,
   ),
   Category(
-    title: 'Fruits and Vegetables',
+    title: 'Vegetables',
     image: 'assets/images/veg&fruit.png',
     bgcolor: Colors.blue.shade50,
     color: Colors.blue.shade300,

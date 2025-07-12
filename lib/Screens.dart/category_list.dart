@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocerymart/Model/category.dart';
+import 'package:grocerymart/Screens.dart/product_list.dart';
 
 class CategoryView extends StatefulWidget {
   const CategoryView({super.key});
@@ -47,7 +48,16 @@ class _CategoryViewState extends State<CategoryView> {
                   itemBuilder: (context, int index) => InkWell(
                     splashColor: category[index].color,
                     borderRadius: BorderRadius.circular(18),
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => CategoryProductListScreen(
+        categoryTitle: category[index].title,
+      ),
+    ),
+  );
+                    },
                     child: Container(
                       width: 175,
                       height: 189,

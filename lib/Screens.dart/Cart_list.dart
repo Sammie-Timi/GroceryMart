@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:grocerymart/Model/cart_item.dart';
 import 'package:grocerymart/Provider/cart_provider.dart';
 import 'package:provider/provider.dart';
@@ -14,11 +15,15 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('My Cart'),
+        title: Text(
+          'My Cart',
+          style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
         centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.grey[100],
-        foregroundColor: Colors.black87,
+        elevation: 1,
+        backgroundColor: Colors.white,
+        shape: Border.all(color: Color(0xFFE2E2E2)),
+        surfaceTintColor: Colors.white,
       ),
       body: cartItems.isEmpty
           ? const Center(child: Text("Your cart is empty"))
@@ -55,8 +60,8 @@ class CartScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         item.product.name,
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.w600,
+                                        style: GoogleFonts.roboto(
+                                          fontWeight: FontWeight.bold,
                                           fontSize: 16,
                                         ),
                                       ),
@@ -78,28 +83,52 @@ class CartScreen extends StatelessWidget {
                                       color: Colors.grey,
                                     ),
                                   ),
+                                  SizedBox(height: 15),
                                   Row(
                                     children: [
                                       Container(
-                                        decoration: BoxDecoration(border: Border.all(color: Color(0xFFF0F0F0)),borderRadius: BorderRadius.circular(17)),
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Color(0xFFF0F0F0),
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            17,
+                                          ),
+                                        ),
                                         child: IconButton(
-                                          onPressed: () => cartProvider
-                                              .decreaseQuantity(item.product.id),
+                                          onPressed: () =>
+                                              cartProvider.decreaseQuantity(
+                                                item.product.id,
+                                              ),
                                           icon: const Icon(
                                             Icons.remove,
+                                            color: Color(0xFFB3B3B3),
                                           ),
                                         ),
                                       ),
+                                      SizedBox(width: 10),
                                       Text(
                                         '${item.quantity}',
                                         style: const TextStyle(fontSize: 16),
                                       ),
+                                      SizedBox(width: 10),
                                       Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Color(0xFFF0F0F0),
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            17,
+                                          ),
+                                        ),
                                         child: IconButton(
-                                          onPressed: () => cartProvider
-                                              .increaseQuantity(item.product.id),
+                                          onPressed: () =>
+                                              cartProvider.increaseQuantity(
+                                                item.product.id,
+                                              ),
                                           icon: const Icon(
-                                            Icons.add_circle_outline,
+                                            Icons.add,
+                                            color: Color(0xFF53B175),
                                           ),
                                         ),
                                       ),
@@ -107,8 +136,8 @@ class CartScreen extends StatelessWidget {
                                       Text(
                                         '₦${(item.product.price * item.quantity).toStringAsFixed(2)}',
                                         style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 18,
                                         ),
                                       ),
                                     ],
@@ -122,56 +151,47 @@ class CartScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 20,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.vertical(
-                      top: Radius.circular(24),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
-                        blurRadius: 10,
-                        offset: const Offset(0, -3),
-                      ),
-                    ],
-                  ),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("Checkout not implemented yet"),
-                          ),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        backgroundColor: Colors.green[600],
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Checkout not implemented yet"),
                         ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      backgroundColor: Color(0xFF53B175),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
                       ),
+                    ),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 24),
+
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
+                          SizedBox(width: 110),
+                          Text(
                             'Go to Checkout',
-                            style: TextStyle(fontSize: 16),
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.roboto(
+                              fontSize: 16,
+                              color: Color(0xFFFCFCFC),
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                          const SizedBox(width: 12),
+                          Spacer(),
                           Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 10,
                               vertical: 6,
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.green[800],
+                              color: Color(0xFF489E67),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Text(
@@ -192,6 +212,3 @@ class CartScreen extends StatelessWidget {
     );
   }
 }
-
-
-    

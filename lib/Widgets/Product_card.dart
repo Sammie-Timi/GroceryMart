@@ -15,7 +15,7 @@ class ProductCard extends StatefulWidget {
 class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
-     final cartProvider = Provider.of<CartProvider>(context, listen: false);
+    final cartProvider = Provider.of<CartProvider>(context, listen: false);
     return Container(
       width: 174,
       height: 230,
@@ -39,7 +39,7 @@ class _ProductCardState extends State<ProductCard> {
           Center(
             child: ClipRRect(
               child: Image.network(
-               widget.product.image,
+                widget.product.image,
                 width: 100,
                 height: 80,
                 fit: BoxFit.contain,
@@ -50,14 +50,14 @@ class _ProductCardState extends State<ProductCard> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Text(
-             widget.product.name,
+              widget.product.name,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
             child: Text(
-                widget.product.category,
+              widget.product.category,
               style: TextStyle(color: Colors.grey, fontSize: 13),
             ),
           ),
@@ -67,17 +67,20 @@ class _ProductCardState extends State<ProductCard> {
             child: Row(
               children: [
                 Text(
-                 '\$${widget.product.price.toStringAsFixed(2)}',
+                  '\$${widget.product.price.toStringAsFixed(2)}',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 Spacer(),
                 InkWell(
                   onTap: () {
-              cartProvider.addToCart(widget.product);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Added to cart!')),
-              );
-            },
+                    cartProvider.addToCart(widget.product);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Added to cart!'),
+                        backgroundColor: Colors.white70,
+                      ),
+                    );
+                  },
                   borderRadius: BorderRadius.circular(12),
                   child: Container(
                     width: 36,

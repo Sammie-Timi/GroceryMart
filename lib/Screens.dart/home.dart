@@ -73,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Image.asset('assets/images/carrot.png', width: 30, height: 30),
+          surfaceTintColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: SafeArea(
