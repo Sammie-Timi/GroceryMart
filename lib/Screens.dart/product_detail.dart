@@ -20,8 +20,24 @@ body: SafeArea(child: Column(
     Stack(
       children: [
         Container(
-          
-        )
+          width: double.infinity,
+                  height: 400,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade100,
+                    image: DecorationImage(
+                      image: NetworkImage(widget.product.image),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+        ),
+  Positioned(
+                  top: 16,
+                  left: 16,
+                  child: GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: const Icon(Icons.arrow_back_ios, size: 24),
+                  ),
+                ),
       ],
     )
   ],
