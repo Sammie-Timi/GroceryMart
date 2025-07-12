@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocerymart/Model/product.dart';
 import 'package:grocerymart/Provider/cart_provider.dart';
-import 'package:grocerymart/Screens.dart/product_detail.dart';
 import 'package:provider/provider.dart';
 
 class ProductCard extends StatefulWidget {
@@ -20,12 +19,12 @@ class _ProductCardState extends State<ProductCard> {
     final cartProvider = Provider.of<CartProvider>(context, listen: false);
     return InkWell(
       onTap: (){
-        Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (_) => ProductView(product: widget.product,),
-    ),
-  );
+  //       Navigator.push(
+  //   context,
+  //   MaterialPageRoute(
+  //     builder: (_) => ProductView(product: widget.product,),
+  //   ),
+  // );
       },
       child: Container(
         width: 174,
