@@ -1,16 +1,32 @@
-# grocerymart
+# GroceryMart
+An online grocery shopping app 
+---
+## Feature
+- **Home Screen**
+  - Featured products by category
+  - Horizontal product sliders
+- **Product List**
+  - Display products with name, image, category and price
+- **Cart Functionality**
+  - Add/remove products to/from cart
+  - Quantity adjustment
+  - Cart persists using SharedPreferences
+- **Product Detail Screen**
+  - Product image, description, quantity selector
+  - Add to basket button
+- **Local Data Only**
+  - Hardcoded product list in `ProductService`
+  - No backend or network dependency
 
-A new Flutter project.
+## Built With
+- **Flutter** (Latest stable version)
+- **Provider** for state management
+- **SharedPreferences** for cart persistence
+- **Google Fonts** for custom typography
 
-## Getting Started
+------
+## UI
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/user-attachments/assets/9c063b37-137b-4234-be75-326dd2af1c0d
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
