@@ -26,7 +26,7 @@ class CategoryProductListScreen extends StatelessWidget {
         surfaceTintColor: Colors.white,
         leading: IconButton(
           padding: EdgeInsets.symmetric(horizontal: 30),
-          icon: Icon(Icons.arrow_back_ios,color: Color(0xFF181725),),
+          icon: Icon(Icons.arrow_back_ios,color: Colors.black,),
           onPressed: () {
             Navigator.pop(context);
           },

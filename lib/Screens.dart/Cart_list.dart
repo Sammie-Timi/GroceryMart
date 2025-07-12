@@ -156,8 +156,12 @@ class CartScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text("Checkout not implemented yet"),
+                        SnackBar(
+                          content: Text(
+                            "Checkout not implemented yet",
+                            style: GoogleFonts.roboto(color: Colors.black),
+                          ),
+                          backgroundColor: Colors.white,
                         ),
                       );
                     },
