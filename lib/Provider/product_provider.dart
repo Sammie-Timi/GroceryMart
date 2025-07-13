@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import '../Model/product.dart';
-import '../Services/product_service.dart';
+import 'package:grocerymart/Model/product.dart';
+import 'package:grocerymart/Services/product_service.dart';
+
+
 
 class ProductProvider with ChangeNotifier {
   final List<Product> _products = ProductService.getProducts();
@@ -10,8 +12,6 @@ class ProductProvider with ChangeNotifier {
   List<String> get categories =>
       _products.map((p) => p.category).toSet().toList();
 
-  List<Product> productsByCategory(String category) =>
-      _products.where((p) => p.category == category).toList();
   List<Product> getByCategory(String category) {
     return _products
         .where(

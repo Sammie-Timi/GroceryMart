@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocerymart/Model/product.dart';
+import 'package:grocerymart/Provider/product_provider.dart';
 import 'package:grocerymart/Widgets/Product_card.dart';
 import 'package:provider/provider.dart';
 
-import '../Provider/product_provider.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
