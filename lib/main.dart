@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocerymart/Provider/cart_provider.dart';
 import 'package:grocerymart/Provider/product_provider.dart';
+import 'package:grocerymart/Screens.dart/Registration/splash.dart';
 
-import 'package:grocerymart/Widgets/bottom_navigation.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: MainNavigation(),
+        home: Splash(),
       ),
     );
   }

@@ -21,7 +21,7 @@ class Product {
     image: json['image'],
     price: json['price'].toDouble(),
     category: json['category'],
-    details: json ['detail']
+    details: json ['details']
   );
 
   Map<String, dynamic> toJson() => {
@@ -30,6 +30,6 @@ class Product {
     'image': image,
     'price': price,
     'category': category,
-    'detail' : details
+    'details' : details
   };
 }
